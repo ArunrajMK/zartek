@@ -86,7 +86,7 @@ return (
 </> )}
 {dish.addonCat.length > 0 ? (
  <Box>
-<Text>Customizations available</Text>
+<Text color={'red'} fontSize={'1xs'}>Customizations available</Text>
 </Box>
 ) : null}
 </Box>
