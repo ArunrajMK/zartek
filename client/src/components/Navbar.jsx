@@ -12,14 +12,14 @@ import {
 
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { BsCart4 } from 'react-icons/bs';
-export default function Navbar({count}) {
+export default function Navbar({count,title}) {
   const { colorMode, toggleColorMode } = useColorMode();
   
   return (
     <>
-      <Box position={'fixed'} bg={useColorModeValue('gray.100', 'gray.900')} paddingRight={'40px'}  width={'100%'}>
+      <Box paddingLeft={'15px'} paddingRight={'15px'} fontSize={{ base: '10', sm: '11', md: '17' }} bg={useColorModeValue('gray.100', 'gray.900')}   width={'100%'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box></Box>
+          <Text>{title}</Text>
 
           <Flex alignItems={'center'}>
 
@@ -34,11 +34,11 @@ export default function Navbar({count}) {
               <Center>
              <Box >
 
-             <Box h="15px" bg={'red'} w="15px" marginLeft={'5px'} marginBottom={'-7px'} borderRadius={'50%'} border={'1px solid red'}>
-             <Text color={'white'} fontWeight={'bold'} fontSize={'2xs'}>{count}</Text>
+             <Box h="25px" bg={'red'} w="25px" marginLeft={'5px'} marginBottom={'-7px'} borderRadius={'50%'} border={'1px solid red'}>
+             <Text color={'white'} fontWeight={'bold'} fontSize={'1xs'}>{count}</Text>
              </Box>
             
-              <BsCart4/>
+              <BsCart4 size="25px"/>
              </Box>
             
               </Center>
