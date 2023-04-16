@@ -15,4 +15,9 @@ code {
 }
 body::-webkit-scrollbar{
   display: none;
+  width: 0;
+}
+
+.scroll::-webkit-scrollbar{
+  width: 0;
 }

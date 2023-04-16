@@ -1,14 +1,15 @@
-import { Tab, TabIndicator, TabList, TabPanels, Tabs } from '@chakra-ui/react'
+import { Tab, TabIndicator, TabList,  Tabs } from '@chakra-ui/react'
 import React from 'react'
 
 function NavTab({elem,setSelectedCategory}) {
  
   return (
-    <Tabs position="fixed" variant="unstyled">
+    <Tabs position="relative"
+     overflowY={'auto'} className='scroll'  justifyContent={'space-between'} variant="unstyled">
     <TabList>
       {elem?.map((item)=>(
 
-     <Tab onClick={()=>setSelectedCategory(item.menu_category)}>{item.menu_category}</Tab>
+     <Tab w="300px"  minW={'100px'}  fontSize={{ base: '8', sm: '9', md: '15' }}   onClick={()=>setSelectedCategory(item.menu_category)}>{item.menu_category}</Tab>
 
       ))}
      
