@@ -7,20 +7,19 @@ import {
   Stack,
   useColorMode,
   Center,
-  Text,
-  HStack,
-
+  Text
 } from '@chakra-ui/react';
+
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { BsCart4 } from 'react-icons/bs';
-export default function Navbar() {
+export default function Navbar({count}) {
   const { colorMode, toggleColorMode } = useColorMode();
   
   return (
     <>
-      <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
+      <Box position={'fixed'} bg={useColorModeValue('gray.100', 'gray.900')}  width={'100%'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box>Logo</Box>
+          <Box></Box>
 
           <Flex alignItems={'center'}>
 
@@ -33,9 +32,15 @@ export default function Navbar() {
               <Text>My orders</Text>
               </Center>
               <Center>
-             
+             <Box >
+
+             <Box h="15px" bg={'red'} w="15px" marginLeft={'5px'} marginBottom={'-7px'} borderRadius={'50%'} border={'1px solid red'}>
+             <Text color={'white'} fontWeight={'bold'} fontSize={'2xs'}>{count}</Text>
+             </Box>
+            
               <BsCart4/>
-                
+             </Box>
+            
               </Center>
            
              

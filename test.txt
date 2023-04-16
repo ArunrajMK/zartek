@@ -1,0 +1,59 @@
+let data = [
+    {
+        "restaurant_id": "1010000001",
+        "restaurant_name": "UNI Resto Cafe",
+        "restaurant_image": "https://i.imgur.com/gLlF09p.jpg",
+        "table_id": "1",
+        "table_name": "Riyadh-Table 01",
+        "branch_name": "UNI Resto Cafe-Riyadh",
+        "nexturl": "http://snapittapp.snapitt.net/api/menu/10/?org=1010000001&branch_id=1000000001&limit=10&offset=20&lang=en",
+        "table_menu_list": [
+            {
+                "menu_category": "Salads and Soup",
+                "menu_category_id": "11",
+                "menu_category_image": "http://restaurants.unicomerp.net/images/Restaurant/Item/ItemGroup_11.jpg",
+                "nexturl": "http://snapittapp.snapitt.net/api/menu/20/?org=1010000001&branch_id=1000000001&menuCat=11&limit=10&offset=20&lang=en",
+                "category_dishes": [
+                   
+                    {
+                        "dish_id": "100000005",
+                        "dish_name": "chicken-soup",
+                        "dish_price": 14.89,
+                        "dish_image": "https://i.imgur.com/PorTefm.jpg",
+                        "dish_currency": "SAR",
+                        "dish_calories": 30,
+                        "dish_description": "fresh as home-made chicken-soup",
+                        "dish_Availability": false,
+                        "dish_Type": 1,
+                        "nexturl": "http://snapittapp.snapitt.net/api/menu/30/?org=1010000001&branch_id=1000000001&menuItem=100000005&limit=10&offset=20&lang=en",
+                        "addonCat": []
+                    }
+                ]
+            },
+            {
+                "menu_category": "From The Barnyard",
+                "menu_category_id": "12",
+                "menu_category_image": "http://restaurants.unicomerp.net/images/Restaurant/Item/ItemGroup_12.png",
+                "nexturl": "http://snapittapp.snapitt.net/api/menu/20/?org=1010000001&branch_id=1000000001&menuCat=12&limit=10&offset=20&lang=en",
+                "category_dishes": [
+                   
+                
+                    {
+                        "dish_id": "100000014",
+                        "dish_name": "Veal Saltimbocca",
+                        "dish_price": 12,
+                        "dish_image": "https://i.imgur.com/7bp5AEW.jpg",
+                        "dish_currency": "SAR",
+                        "dish_calories": 320,
+                        "dish_description": "Tender veal cutlets sautéed with fresh sage and prosciutto. Finished in the oven with mozzarella and served atop creamy asiago linguini,",
+                        "dish_Availability": false,
+                        "dish_Type": 1,
+                        "nexturl": "http://snapittapp.snapitt.net/api/menu/30/?org=1010000001&branch_id=1000000001&menuItem=100000014&limit=10&offset=20&lang=en",
+                        "addonCat": []
+                    }
+                ]
+            }
+                
+                ]
+            }
+        ]
