@@ -9,7 +9,7 @@ function NavTab({elem,setSelectedCategory}) {
     <TabList>
       {elem?.map((item)=>(
 
-     <Tab w="300px"  minW={'100px'}  fontSize={{ base: '8', sm: '9', md: '15' }}   onClick={()=>setSelectedCategory(item.menu_category)}>{item.menu_category}</Tab>
+     <Tab w="300px"   minW={'100px'}  fontSize={{ base: '8', sm: '9', md: '15' }}   onClick={()=>setSelectedCategory(item.menu_category)}>{item.menu_category}</Tab>
 
       ))}
      
