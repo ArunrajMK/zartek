@@ -17,7 +17,7 @@ export default function Navbar({count}) {
   
   return (
     <>
-      <Box position={'fixed'} bg={useColorModeValue('gray.100', 'gray.900')}  width={'100%'}>
+      <Box position={'fixed'} bg={useColorModeValue('gray.100', 'gray.900')} paddingRight={'40px'}  width={'100%'}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box></Box>
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { getData } from "../redux/action";
 import { useDispatch } from "react-redux";
-import { Box, Button,  Heading, Text } from "@chakra-ui/react";
+import { Box, Button,  Flex,  Heading, Text } from "@chakra-ui/react";
 import Cards from "../components/Cards";
 import NavTab from "../components/NavTab";
 import Navbar from "../components/Navbar";
@@ -54,39 +54,34 @@ return (
     <>
     <Navbar  count={cartItems.length}/>
     <NavTab elem={data[0]?.table_menu_list} setSelectedCategory={setSelectedCategory}/>
-<Box>
-
+<Box paddingTop={'70px'} paddingBottom={'50px'}>
 
 <>
-
-
-
-
 </>
-
+<Box >
 {data[0]?.table_menu_list.map((category) => (
  <Box>
 
 {category.menu_category===selectedCategory&&<>
 
 {category?.category_dishes?.map((dish) => (
-<Box>
+<Box borderBottom={'1px solid grey'} marginBottom={'5px'}>
     <Cards elem={dish}/>
 
 {cartItems.some((item) => item.dish_id === dish.dish_id) ? (
-<div>
-<Button  onClick={() => handleRemoveFromCart(dish)}>-</Button>
-{cartItems.find((item) => item.dish_id === dish.dish_id).count}
-<Button  onClick={() => handleAddToCart(dish)}>+</Button>
-</div>
-) : ( <>
-<Button  onClick={() => handleRemoveFromCart(dish)}>-</Button>
-0
-<Button  onClick={() => handleAddToCart(dish)}>+</Button>
-</> )}
+<Flex  marginBottom={'10px'} color={'white'}  marginTop="15px" bg='green'  borderRadius={'10px'} width={'100px'} marginLeft={'100px'}>
+<Box  cursor={'pointer'} w='50px'  onClick={() => handleRemoveFromCart(dish)}>-</Box>
+<Text color={'white'}>{cartItems.find((item) => item.dish_id === dish.dish_id).count}</Text>
+<Box  cursor={'pointer'}  w='50px' onClick={() => handleAddToCart(dish)}>+</Box>
+</Flex>
+) : ( <Flex marginBottom={'10px'} color={'white'} marginTop="15px" bg='green' borderRadius={'10px'} width={'100px'} marginLeft={'100px'}>
+<Box  cursor={'pointer'}  w='50px' onClick={() => handleRemoveFromCart(dish)}>-</Box>
+ <Text>0</Text>
+<Box  cursor={'pointer'}  w='50px' onClick={() => handleAddToCart(dish)}>+</Box>
+</Flex > )}
 {dish.addonCat.length > 0 ? (
  <Box>
-<Text color={'red'} fontSize={'1xs'}>Customizations available</Text>
+<Text paddingLeft={'50px'} color={'red'} textAlign={'left'} fontSize={'1xs'}>Customizations available</Text>
 </Box>
 ) : null}
 </Box>
@@ -98,7 +93,7 @@ return (
 
 </Box>
 ))}
-
+</Box>
 </Box>
 </>
 );

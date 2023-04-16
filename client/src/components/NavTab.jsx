@@ -7,7 +7,9 @@ function NavTab({elem,setSelectedCategory}) {
     <Tabs position="fixed" variant="unstyled">
     <TabList>
       {elem?.map((item)=>(
+
      <Tab onClick={()=>setSelectedCategory(item.menu_category)}>{item.menu_category}</Tab>
+
       ))}
      
       
@@ -18,13 +20,7 @@ function NavTab({elem,setSelectedCategory}) {
       bg="blue.500"
       borderRadius="1px"
     />
-    <TabPanels>
-
-      {/* <TabPanel> */}
-        {/* <p>{elem.menu_category}</p> */}
-      {/* </TabPanel> */}
-      
-    </TabPanels>
+   
   </Tabs>
   )
 }
