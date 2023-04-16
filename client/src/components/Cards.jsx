@@ -4,20 +4,20 @@ import React from 'react'
 
 function Cards({elem}) {
 
-
+console.log("elemmmmm",elem)
 
   return (
-    <>
- <Flex paddingLeft={'10px'} paddingTop={'100px'} justifyContent={'space-between'} >
+    <Box>
+ <Flex paddingLeft={'50px'} paddingRight={'50px'} paddingTop={'30px'} justifyContent={'space-between'} >
  <Box>
-     <Text fontWeight={'bold'} fontSize={'2xl'}>{elem.dish_name}</Text>
-     <Text fontWeight={'bold'}>{elem.dish_currency} {elem.dish_price}</Text>
-     <Text fontSize={'1xs'} color={'grey'} >{elem.dish_description}</Text>
+     <Text textAlign={'left'} fontWeight={'bold'} fontSize={'2xl'}>{elem.dish_name}</Text>
+     <Text textAlign={'left'} fontWeight={'bold'}>{elem.dish_currency} {elem.dish_price}</Text>
+     <Text textAlign={'left'} fontSize={'1xs'} color={'grey'} >{elem.dish_description}</Text>
     
  </Box>
  <Flex w='30%' justifyContent={'space-between'} >
      <Center>
-     <Text>Calories</Text>
+     <Text>{elem.dish_calories} Calories</Text>
      </Center>
  <Image alt="" h='100px' w='100px' 
  src={elem.dish_image}/>
@@ -28,7 +28,7 @@ function Cards({elem}) {
 
 
 
-    </>
+    </Box>
   )
 }
 
