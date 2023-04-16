@@ -1,14 +1,16 @@
 
+
+import { Box } from '@chakra-ui/react';
 import './App.css';
 import MainRoute from './routes/MainRoute';
 
 function App() {
   return (
-    <div className="App">
+    <Box className="App">
     
 <MainRoute/>
-    
-    </div>
+
+    </Box>
   );
 }
 
