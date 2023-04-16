@@ -12,7 +12,8 @@ import {
 
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { BsCart4 } from 'react-icons/bs';
-export default function Navbar({count,title}) {
+import MyOrderModal from './MyOrderModal';
+export default function Navbar({count,title,cart}) {
   const { colorMode, toggleColorMode } = useColorMode();
   
   return (
@@ -24,12 +25,13 @@ export default function Navbar({count,title}) {
           <Flex alignItems={'center'}>
 
             <Stack direction={'row'} spacing={7}>
-              
+            <Center>
               <Button onClick={toggleColorMode}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
+              </Center>
               <Center>
-              <Text>My orders</Text>
+             <MyOrderModal cart={cart}/>
               </Center>
               <Center>
              <Box >

@@ -49,11 +49,11 @@ useEffect(()=>{
 },[dispatch])
 
 
-console.log("data",data[0])
+
 
 return (
     <>
-    <Navbar title={data[0]?.branch_name} count={cartItems.length}/>
+    <Navbar cart={cartItems} title={data[0]?.branch_name} count={cartItems.length}/>
     <NavTab elem={data[0]?.table_menu_list} setSelectedCategory={setSelectedCategory}/>
    
 <Box paddingTop={'70px'} paddingBottom={'50px'}>
