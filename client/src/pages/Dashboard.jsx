@@ -48,13 +48,13 @@ useEffect(()=>{
 
 },[dispatch])
 
-
+console.log("Data",data[0]?.table_menu_list)
 
 
 return (
     <>
     <Navbar cart={cartItems} title={data[0]?.branch_name} count={cartItems.length}/>
-    <NavTab elem={data[0]?.table_menu_list} setSelectedCategory={setSelectedCategory}/>
+    <NavTab elem={data[0]?.table_menu_list} setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} />
    
 <Box paddingTop={'70px'} paddingBottom={'50px'}>
 
@@ -69,18 +69,32 @@ return (
 {category?.category_dishes?.map((dish) => (
 <Box borderBottom={'1px solid grey'} marginBottom={'5px'}>
     <Cards elem={dish}/>
-
-{cartItems.some((item) => item.dish_id === dish.dish_id) ? (
+    {dish.dish_Availability===true?<>
+    
+        {cartItems.some((item) => item.dish_id === dish.dish_id) ? (
 <Flex  marginBottom={'10px'} color={'white'}  marginTop="15px" bg='green'  borderRadius={'10px'} width={'100px'} marginLeft={'15px'}>
 <Box  cursor={'pointer'} w='50px'  onClick={() => handleRemoveFromCart(dish)}>-</Box>
 <Text color={'white'}>{cartItems.find((item) => item.dish_id === dish.dish_id).count}</Text>
 <Box  cursor={'pointer'}  w='50px' onClick={() => handleAddToCart(dish)}>+</Box>
 </Flex>
+
 ) : ( <Flex marginBottom={'10px'} color={'white'} marginTop="15px" bg='green' borderRadius={'10px'} width={'100px'} marginLeft={'15px'}>
 <Box  cursor={'pointer'}  w='50px' onClick={() => handleRemoveFromCart(dish)}>-</Box>
  <Text>0</Text>
 <Box  cursor={'pointer'}  w='50px' onClick={() => handleAddToCart(dish)}>+</Box>
-</Flex > )}
+
+</Flex >
+
+
+ )}
+ </>:
+ <Box   marginBottom={'10px'} color={'white'}  marginTop="15px" bg='red'  borderRadius={'10px'} width={'100px'} marginLeft={'15px'}>
+   <Text></Text>
+   Out of stoke
+ </Box>
+}
+
+
 {dish.addonCat.length > 0 ? (
  <Box>
 <Text fontSize={{ base: '10', sm: '11', md: '17' }} marginLeft={'15px'} color={'red'} textAlign={'left'}>Customizations available</Text>
