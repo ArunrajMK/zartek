@@ -15,7 +15,14 @@ import { BsCart4 } from 'react-icons/bs';
 import MyOrderModal from './MyOrderModal';
 export default function Navbar({count,title,cart}) {
   const { colorMode, toggleColorMode } = useColorMode();
-  
+  console.log("cart",cart)
+
+
+let cartCount = cart.reduce((acc, item)=>{
+  return acc + item.count
+},0)
+
+
   return (
     <>
       <Box paddingLeft={'15px'} paddingRight={'15px'} fontSize={{ base: '10', sm: '11', md: '17' }} bg={useColorModeValue('gray.100', 'gray.900')}   width={'100%'}>
@@ -37,7 +44,7 @@ export default function Navbar({count,title,cart}) {
              <Box >
 
              <Box h="25px" bg={'red'} w="25px" marginLeft={'5px'} marginBottom={'-7px'} borderRadius={'50%'} border={'1px solid red'}>
-             <Text color={'white'} fontWeight={'bold'} fontSize={'1xs'}>{count}</Text>
+             <Text color={'white'} fontWeight={'bold'} fontSize={'1xs'}>{cartCount}</Text>
              </Box>
             
               <BsCart4 size="25px"/>
